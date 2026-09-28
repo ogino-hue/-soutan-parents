@@ -21,7 +21,7 @@
 :root {
   --bg: #05070b;
   --white: #f7f8fb;
-  --muted: #b8c1cf;
+  --muted: #c4ccd8;
   --blue: #55c8ff;
   --purple: #9b7bff;
   --green: #54e6b1;
@@ -81,6 +81,7 @@ body::before {
 .noise {
   position: fixed;
   inset: 0;
+
   pointer-events: none;
   opacity: .03;
   z-index: 20;
@@ -106,13 +107,13 @@ section {
 
   position: relative;
 
-  padding: 5vh 7vw;
+  padding: 4vh 6vw;
 
   overflow: hidden;
 }
 
 .container {
-  width: min(1300px, 100%);
+  width: min(1400px, 100%);
   margin: auto;
 }
 
@@ -121,28 +122,23 @@ section {
 ========================================================= */
 
 .eyebrow {
-  font-size: clamp(1.25rem, 1.5vw, 1.55rem);
-  letter-spacing: .12em;
+  font-size: clamp(1.5rem, 1.8vw, 1.9rem);
+
+  letter-spacing: .1em;
 
   color: var(--blue);
-  font-weight: 800;
 
-  margin-bottom: 1.4rem;
+  font-weight: 900;
+
+  margin-bottom: 1.3rem;
 }
 
 h2 {
-  font-size: clamp(3rem, 6vw, 6.3rem);
+  font-size: clamp(3.3rem, 6vw, 6.5rem);
+
   line-height: 1.1;
+
   letter-spacing: -.04em;
-}
-
-.lead {
-  margin-top: 2.2rem;
-
-  font-size: clamp(1.4rem, 2vw, 1.8rem);
-  line-height: 1.8;
-
-  color: var(--muted);
 }
 
 strong {
@@ -155,7 +151,9 @@ strong {
 
 .reveal {
   opacity: 0;
-  transform: translateY(42px);
+
+  transform:
+    translateY(42px);
 
   transition:
     opacity 1s cubic-bezier(.2,.8,.2,1),
@@ -164,7 +162,9 @@ strong {
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+
+  transform:
+    translateY(0);
 }
 
 .delay1 { transition-delay: .15s; }
@@ -178,6 +178,7 @@ strong {
 
 .progress {
   position: fixed;
+
   top: 0;
   left: 0;
 
@@ -197,17 +198,20 @@ strong {
 
 .page-number {
   position: fixed;
+
   right: 28px;
   bottom: 20px;
 
   z-index: 40;
 
   font-size: 1.25rem;
+
   font-weight: 700;
 
   letter-spacing: .08em;
 
-  color: rgba(255,255,255,.55);
+  color:
+    rgba(255,255,255,.55);
 }
 
 /* =========================================================
@@ -219,10 +223,13 @@ strong {
 }
 
 .hero .question {
-  font-size: clamp(4rem, 8vw, 8.5rem);
+  font-size:
+    clamp(4rem, 8vw, 8.5rem);
+
   font-weight: 900;
 
   line-height: 1.1;
+
   letter-spacing: -.05em;
 }
 
@@ -238,6 +245,7 @@ strong {
     );
 
   -webkit-background-clip: text;
+
   color: transparent;
 }
 
@@ -247,14 +255,17 @@ strong {
   bottom: 4vh;
   left: 50%;
 
-  transform: translateX(-50%);
+  transform:
+    translateX(-50%);
 
   font-size: 1.25rem;
+
   font-weight: 700;
 
   letter-spacing: .12em;
 
-  color: rgba(255,255,255,.55);
+  color:
+    rgba(255,255,255,.55);
 }
 
 .scroll-guide::after {
@@ -273,7 +284,8 @@ strong {
       transparent
     );
 
-  animation: pulse 1.8s infinite;
+  animation:
+    pulse 1.8s infinite;
 }
 
 @keyframes pulse {
@@ -294,22 +306,26 @@ strong {
 ========================================================= */
 
 .journey {
-  width: min(1180px, 100%);
+  width:
+    min(1200px,100%);
 }
 
 .journey-head {
   text-align: center;
-  margin-bottom: 3.2vh;
+
+  margin-bottom: 3vh;
 }
 
 .journey-head .eyebrow {
-  margin-bottom: .7rem;
+  margin-bottom: .6rem;
 }
 
 .journey-head .intro {
   color: var(--muted);
 
-  font-size: clamp(1.25rem, 1.7vw, 1.65rem);
+  font-size:
+    clamp(1.4rem,1.8vw,1.8rem);
+
   font-weight: 600;
 
   line-height: 1.5;
@@ -317,29 +333,34 @@ strong {
 
 .journey-list {
   display: flex;
+
   flex-direction: column;
 
-  gap: clamp(.7rem, 1.4vh, 1.15rem);
+  gap:
+    clamp(.65rem,1.3vh,1rem);
 }
 
 .journey-item {
   display: grid;
 
   grid-template-columns:
-    clamp(135px, 14vw, 190px) 1fr;
+    clamp(140px,14vw,190px)
+    1fr;
 
   align-items: center;
 
-  gap: clamp(1rem, 3vw, 3rem);
+  gap:
+    clamp(1rem,3vw,3rem);
 
   padding:
-    clamp(1rem, 1.8vw, 1.55rem)
-    clamp(1.2rem, 2vw, 2rem);
+    clamp(.9rem,1.7vw,1.45rem)
+    clamp(1.2rem,2vw,2rem);
 
-  min-height: 16vh;
+  min-height: 15vh;
 
   border-left:
-    5px solid rgba(255,255,255,.1);
+    5px solid
+    rgba(255,255,255,.1);
 
   background:
     linear-gradient(
@@ -363,59 +384,84 @@ strong {
 section.visible
 .journey-item:nth-child(1) {
   opacity: 1;
-  transform: translateY(0) scale(1);
-  border-color: var(--blue);
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  border-color:
+    var(--blue);
+
   transition-delay: .35s;
 }
 
 section.visible
 .journey-item:nth-child(2) {
   opacity: 1;
-  transform: translateY(0) scale(1);
-  border-color: var(--purple);
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  border-color:
+    var(--purple);
+
   transition-delay: 1.15s;
 }
 
 section.visible
 .journey-item:nth-child(3) {
   opacity: 1;
-  transform: translateY(0) scale(1);
-  border-color: var(--green);
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  border-color:
+    var(--green);
+
   transition-delay: 1.95s;
 }
 
 .journey-year {
-  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-size:
+    clamp(1.5rem,2vw,2rem);
+
   font-weight: 900;
 
-  color: var(--blue);
+  color:
+    var(--blue);
 }
 
 .journey-item:nth-child(2)
 .journey-year {
-  color: var(--purple);
+  color:
+    var(--purple);
 }
 
 .journey-item:nth-child(3)
 .journey-year {
-  color: var(--green);
+  color:
+    var(--green);
 }
 
 .journey-title {
-  font-size: clamp(2.35rem, 4vw, 4.25rem);
+  font-size:
+    clamp(2.35rem,4vw,4.25rem);
 
   font-weight: 900;
 
   letter-spacing: -.04em;
+
   line-height: 1.05;
 
   white-space: nowrap;
 }
 
-/* 長いタイトルだけ少し小さくして必ず1行に */
 .journey-item:nth-child(2)
 .journey-title {
-  font-size: clamp(2rem, 3.5vw, 3.7rem);
+  font-size:
+    clamp(2rem,3.45vw,3.65rem);
 }
 
 /* =========================================================
@@ -425,17 +471,21 @@ section.visible
 .stage {
   display: grid;
 
+  /*
+     左側を少し狭く、
+     右側の文章エリアを広くする
+  */
   grid-template-columns:
-    .72fr 1.28fr;
+    .62fr 1.38fr;
 
-  gap: 6vw;
+  gap: 5vw;
 
   align-items: center;
 }
 
 .number {
   font-size:
-    clamp(8rem, 18vw, 16rem);
+    clamp(8rem,18vw,16rem);
 
   font-weight: 900;
 
@@ -450,37 +500,65 @@ section.visible
   top: 10vh;
 }
 
+.stage-year {
+  font-size:
+    clamp(1.9rem,2.4vw,2.5rem);
+
+  color:
+    var(--blue);
+
+  font-weight: 900;
+
+  margin-bottom: 1.2rem;
+
+  letter-spacing: .03em;
+}
+
 .stage-title {
   font-size:
-    clamp(3.5rem, 6vw, 6.5rem);
+    clamp(3.7rem,6vw,6.6rem);
 
   font-weight: 900;
 
   letter-spacing: -.05em;
 
-  line-height: 1.08;
+  line-height: 1.06;
 }
 
 .stage-sub {
-  margin-top: 1.1rem;
+  margin-top: 1.3rem;
 
-  color: var(--blue);
+  color:
+    var(--blue);
 
   font-size:
-    clamp(1.3rem, 1.7vw, 1.7rem);
+    clamp(1.75rem,2.15vw,2.25rem);
 
-  line-height: 1.45;
+  line-height: 1.35;
 
-  font-weight: 800;
+  font-weight: 900;
+}
+
+/* アントレプレナーシップ探究を1行に */
+.stage-sub.long {
+  font-size:
+    clamp(1.45rem,1.85vw,1.95rem);
+
+  white-space: nowrap;
 }
 
 .big-message {
   font-size:
-    clamp(2rem, 3.15vw, 3.45rem);
+    clamp(2.05rem,3vw,3.35rem);
 
   line-height: 1.55;
 
   font-weight: 700;
+}
+
+/* 指定した文章を強制的に1行に */
+.keep-line {
+  white-space: nowrap;
 }
 
 .accent {
@@ -506,6 +584,7 @@ section.visible
 
 .turning h2 {
   max-width: 1050px;
+
   margin: auto;
 }
 
@@ -515,22 +594,29 @@ section.visible
 
 .admission-title {
   text-align: center;
+
+  max-width: 1250px;
 }
 
-.admission-title .small {
+.admission-kicker {
   font-size:
-    clamp(1.5rem, 2vw, 1.9rem);
+    clamp(2rem,2.7vw,2.8rem);
 
-  font-weight: 600;
+  font-weight: 800;
 
-  color: var(--muted);
+  color:
+    var(--muted);
 
-  margin-bottom: 2.2rem;
+  margin-bottom: 1.8rem;
+
+  line-height: 1.4;
 }
 
 .admission-title h2 {
   font-size:
-    clamp(5rem, 11vw, 10.5rem);
+    clamp(5.5rem,11vw,11rem);
+
+  line-height: 1;
 }
 
 .admission-title h2 span {
@@ -547,9 +633,40 @@ section.visible
   color: transparent;
 }
 
+.admission-lead {
+  margin-top: 2rem;
+
+  font-size:
+    clamp(1.8rem,2.5vw,2.5rem);
+
+  line-height: 1.65;
+
+  color:
+    var(--muted);
+
+  font-weight: 650;
+}
+
+.admission-lead strong {
+  font-size: 1.08em;
+
+  color: white;
+}
+
 /* =========================================================
    08 SKILLS
 ========================================================= */
+
+.skills-title {
+  font-size:
+    clamp(3rem,5.4vw,5.8rem);
+
+  line-height: 1.12;
+
+  letter-spacing: -.04em;
+
+  font-weight: 900;
+}
 
 .skills {
   display: grid;
@@ -559,13 +676,13 @@ section.visible
 
   gap: 1.1rem;
 
-  margin-top: 3rem;
+  margin-top: 2.7rem;
 }
 
 .skill {
-  min-height: 230px;
+  min-height: 245px;
 
-  padding: 1.8rem;
+  padding: 1.7rem;
 
   border:
     1px solid
@@ -593,7 +710,8 @@ section.visible
 }
 
 .skill:hover {
-  transform: translateY(-8px);
+  transform:
+    translateY(-8px);
 
   border-color:
     rgba(85,200,255,.65);
@@ -603,84 +721,107 @@ section.visible
 }
 
 .skill .icon {
-  font-size: 2.7rem;
+  font-size:
+    2.8rem;
 }
 
 .skill h3 {
   font-size:
-    clamp(1.65rem, 2vw, 2.1rem);
+    clamp(1.8rem,2.2vw,2.3rem);
 
-  margin-bottom: .65rem;
+  margin-bottom:
+    .7rem;
 }
 
 .skill p {
-  color: var(--muted);
+  color:
+    var(--muted);
 
-  line-height: 1.55;
+  line-height:
+    1.5;
 
-  font-size: 1.25rem;
+  font-size:
+    clamp(1.4rem,1.65vw,1.65rem);
+
+  font-weight:
+    600;
 }
 
 /* =========================================================
    09 PARENT MESSAGE
-   ★ 1画面に必ず収める
 ========================================================= */
 
 .quote {
-  max-width: 1150px;
+  max-width:
+    1200px;
+
   margin: auto;
 }
 
 .quote .eyebrow {
-  margin-bottom: 1rem;
+  margin-bottom:
+    .8rem;
 }
 
 .quote .line1 {
   font-size:
-    clamp(2.7rem, 4.6vw, 5rem);
+    clamp(2.8rem,4.5vw,4.9rem);
 
-  line-height: 1.3;
+  line-height:
+    1.25;
 
-  font-weight: 900;
+  font-weight:
+    900;
 }
 
 .quote .line2 {
-  margin-top: 2.2rem;
+  margin-top:
+    1.8rem;
 
   font-size:
-    clamp(1.3rem, 1.8vw, 1.7rem);
+    clamp(1.65rem,2.15vw,2.15rem);
 
-  line-height: 1.65;
+  line-height:
+    1.55;
 
-  color: var(--muted);
+  color:
+    var(--muted);
+
+  font-weight:
+    600;
+}
+
+.quote .line2 strong {
+  font-weight:
+    900;
 }
 
 /* =========================================================
    10 FINAL
-   ★ 1画面に必ず収める
 ========================================================= */
 
 .final {
-  text-align: center;
-}
-
-.final .eyebrow {
-  margin-bottom: 1rem;
+  text-align:
+    center;
 }
 
 .final .main {
   font-size:
-    clamp(3.8rem, 7vw, 7.5rem);
+    clamp(3.9rem,7vw,7.5rem);
 
-  line-height: 1.02;
+  line-height:
+    1.02;
 
-  font-weight: 900;
+  font-weight:
+    900;
 
-  letter-spacing: -.05em;
+  letter-spacing:
+    -.05em;
 }
 
 .final .main span {
-  display: block;
+  display:
+    block;
 
   background:
     linear-gradient(
@@ -690,117 +831,153 @@ section.visible
       var(--purple)
     );
 
-  -webkit-background-clip: text;
+  -webkit-background-clip:
+    text;
 
-  color: transparent;
+  color:
+    transparent;
 }
 
 .final .sub {
-  max-width: 900px;
+  max-width:
+    950px;
 
-  margin: 2rem auto 0;
+  margin:
+    2rem auto 0;
 
-  color: var(--muted);
+  color:
+    var(--muted);
 
   font-size:
-    clamp(1.25rem, 1.7vw, 1.6rem);
+    clamp(1.55rem,2vw,2rem);
 
-  line-height: 1.6;
+  line-height:
+    1.55;
+
+  font-weight:
+    600;
+}
+
+.final .sub strong {
+  font-size:
+    1.08em;
+
+  font-weight:
+    900;
 }
 
 .school {
-  margin-top: 2rem;
+  margin-top:
+    1.8rem;
 
-  font-size: 1.25rem;
+  font-size:
+    clamp(1.4rem,1.8vw,1.8rem);
 
-  font-weight: 600;
+  font-weight:
+    800;
 
-  line-height: 1.5;
+  line-height:
+    1.5;
 
-  letter-spacing: .05em;
+  letter-spacing:
+    .03em;
 
   color:
-    rgba(255,255,255,.55);
+    rgba(255,255,255,.72);
 }
 
 /* =========================================================
    SHORT HEIGHT PC
-   ★ ノートPC・プロジェクター対策
 ========================================================= */
 
 @media
-(min-width: 901px)
-and (max-height: 800px) {
+(min-width:901px)
+and (max-height:800px) {
 
   section {
-    padding-top: 3vh;
-    padding-bottom: 3vh;
+    padding-top:
+      2.5vh;
+
+    padding-bottom:
+      2.5vh;
   }
 
   .journey-head {
-    margin-bottom: 2vh;
-  }
-
-  .journey-head .eyebrow {
-    margin-bottom: .4rem;
+    margin-bottom:
+      1.7vh;
   }
 
   .journey-list {
-    gap: .55rem;
+    gap:
+      .5rem;
   }
 
   .journey-item {
-    min-height: 14vh;
-    padding-top: .8rem;
-    padding-bottom: .8rem;
+    min-height:
+      13.5vh;
+
+    padding-top:
+      .7rem;
+
+    padding-bottom:
+      .7rem;
   }
 
-  .journey-title {
-    font-size:
-      clamp(2.1rem, 3.6vw, 3.8rem);
+  .stage-year {
+    margin-bottom:
+      .7rem;
   }
 
-  .journey-item:nth-child(2)
-  .journey-title {
-    font-size:
-      clamp(1.9rem, 3.15vw, 3.35rem);
+  .stage-sub {
+    margin-top:
+      .8rem;
   }
 
   .skills {
-    margin-top: 2rem;
+    margin-top:
+      1.8rem;
   }
 
   .skill {
-    min-height: 200px;
-    padding: 1.5rem;
+    min-height:
+      205px;
+
+    padding:
+      1.35rem;
   }
 
   .quote .line1 {
     font-size:
-      clamp(2.5rem, 4.2vw, 4.5rem);
+      clamp(2.5rem,4vw,4.3rem);
   }
 
   .quote .line2 {
-    margin-top: 1.5rem;
+    margin-top:
+      1.2rem;
 
     font-size:
-      clamp(1.25rem, 1.6vw, 1.5rem);
+      clamp(1.5rem,1.85vw,1.85rem);
 
-    line-height: 1.5;
+    line-height:
+      1.45;
   }
 
   .final .main {
     font-size:
-      clamp(3.5rem, 6.4vw, 6.7rem);
+      clamp(3.5rem,6.2vw,6.5rem);
   }
 
   .final .sub {
-    margin-top: 1.4rem;
-    line-height: 1.45;
+    margin-top:
+      1.3rem;
+
+    line-height:
+      1.4;
   }
 
   .school {
-    margin-top: 1.3rem;
+    margin-top:
+      1rem;
   }
 }
 
@@ -811,22 +988,30 @@ and (max-height: 800px) {
 @media (max-width:900px) {
 
   html {
-    scroll-snap-type: none;
+    scroll-snap-type:
+      none;
   }
 
   section {
-    height: auto;
-    min-height: 100svh;
+    height:
+      auto;
+
+    min-height:
+      100svh;
 
     padding:
       7vh 6vw;
 
-    overflow: visible;
+    overflow:
+      visible;
   }
 
   .stage {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+    grid-template-columns:
+      1fr;
+
+    gap:
+      2.5rem;
   }
 
   .skills {
@@ -835,41 +1020,59 @@ and (max-height: 800px) {
   }
 
   .journey-title {
-    white-space: normal;
+    white-space:
+      normal;
+  }
+
+  .keep-line {
+    white-space:
+      normal;
+  }
+
+  .stage-sub.long {
+    white-space:
+      normal;
   }
 }
 
 @media (max-width:650px) {
 
   .journey-item {
-    display: block;
+    display:
+      block;
   }
 
   .journey-year {
-    margin-bottom: .7rem;
+    margin-bottom:
+      .7rem;
   }
 
   .journey-title,
   .journey-item:nth-child(2)
   .journey-title {
     font-size:
-      clamp(2rem, 7vw, 3rem);
+      clamp(2rem,7vw,3rem);
   }
 
   .page-number {
-    right: 15px;
-    bottom: 15px;
+    right:
+      15px;
+
+    bottom:
+      15px;
   }
 }
 
 @media (max-width:520px) {
 
   .skills {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
   }
 
   .skill {
-    min-height: 200px;
+    min-height:
+      200px;
   }
 }
 
@@ -893,8 +1096,11 @@ and (max-height: 800px) {
 
   .reveal,
   .journey-item {
-    opacity: 1;
-    transform: none;
+    opacity:
+      1;
+
+    transform:
+      none;
   }
 }
 
@@ -944,7 +1150,6 @@ and (max-height: 800px) {
     </div>
 
   </div>
-
 
   <div class="scroll-guide">
     SCROLL
@@ -1037,7 +1242,9 @@ and (max-height: 800px) {
 
     <div>
 
-      <div class="eyebrow reveal">
+      <div
+        class="stage-year
+               reveal">
         1年
       </div>
 
@@ -1068,7 +1275,7 @@ and (max-height: 800px) {
              reveal
              delay3">
 
-      企業や社会が<br>
+      企業や社会が
       向き合っている<br>
 
       <span class="accent">
@@ -1098,7 +1305,9 @@ and (max-height: 800px) {
 
     <div>
 
-      <div class="eyebrow reveal">
+      <div
+        class="stage-year
+               reveal">
         2年前半
       </div>
 
@@ -1114,6 +1323,7 @@ and (max-height: 800px) {
 
       <div
         class="stage-sub
+               long
                reveal
                delay2">
 
@@ -1129,8 +1339,9 @@ and (max-height: 800px) {
              reveal
              delay3">
 
-      社会課題を
-      自分事として捉え、<br>
+      <span class="keep-line">
+        社会課題を自分事として捉え、
+      </span><br>
 
       調べ、聞き、考え、<br>
 
@@ -1161,7 +1372,9 @@ and (max-height: 800px) {
 
     <div>
 
-      <div class="eyebrow reveal">
+      <div
+        class="stage-year
+               reveal">
         2年後半
       </div>
 
@@ -1192,8 +1405,9 @@ and (max-height: 800px) {
              reveal
              delay3">
 
-      「気になる」を
-      「問い」に変え、<br>
+      <span class="keep-line">
+        「気になる」を「問い」に変え、
+      </span><br>
 
       社会と学問を
       つなぎながら、<br>
@@ -1219,13 +1433,7 @@ and (max-height: 800px) {
 
   <div class="container turning">
 
-    <div class="eyebrow reveal">
-      なぜ？
-    </div>
-
-    <h2
-      class="reveal
-             delay1">
+    <h2 class="reveal">
 
       なぜ、本校は<br>
 
@@ -1253,7 +1461,7 @@ and (max-height: 800px) {
            admission-title">
 
     <div
-      class="small
+      class="admission-kicker
              reveal">
 
       探究で培った力を、
@@ -1273,8 +1481,8 @@ and (max-height: 800px) {
     </h2>
 
 
-    <p
-      class="lead
+    <div
+      class="admission-lead
              reveal
              delay2">
 
@@ -1288,7 +1496,7 @@ and (max-height: 800px) {
         大学入試で使える力にまで育てる。
       </strong>
 
-    </p>
+    </div>
 
   </div>
 
@@ -1308,8 +1516,9 @@ and (max-height: 800px) {
     </div>
 
 
-    <h2
-      class="reveal
+    <div
+      class="skills-title
+             reveal
              delay1">
 
       「私は何をしてきたか」を、<br>
@@ -1318,7 +1527,7 @@ and (max-height: 800px) {
         自分の言葉で語れる。
       </span>
 
-    </h2>
+    </div>
 
 
     <div class="skills">
@@ -1467,10 +1676,13 @@ and (max-height: 800px) {
              delay2">
 
       本校では、総合型選抜にも挑戦できる力を、<br>
+
       1年生から時間をかけて育ててきました。<br><br>
 
       お子さまが
-      <strong>「挑戦してみたい」</strong>
+      <strong>
+        「挑戦してみたい」
+      </strong>
       と言ったとき、<br>
 
       最初から選択肢を狭めるのではなく、<br>
@@ -1494,15 +1706,10 @@ and (max-height: 800px) {
 
   <div class="container final">
 
-    <div class="eyebrow reveal">
-      探究から、未来へ。
-    </div>
-
 
     <div
       class="main
-             reveal
-             delay1">
+             reveal">
 
       探究を、
 
@@ -1516,14 +1723,18 @@ and (max-height: 800px) {
     <div
       class="sub
              reveal
-             delay2">
+             delay1">
 
       社会を知る。<br>
+
       課題に向き合う。<br>
+
       自分なりの答えをつくる。<br>
+
       学問につなげる。<br><br>
 
       その積み重ねを、
+
       <strong>
         一人ひとりの進路へ。
       </strong>
@@ -1534,10 +1745,15 @@ and (max-height: 800px) {
     <div
       class="school
              reveal
-             delay3">
+             delay2">
 
-      高崎健康福祉大学高崎高等学校<br>
-      総合的な探究の時間
+      <strong>
+        高崎健康福祉大学高崎高等学校
+      </strong><br>
+
+      <strong>
+        総合的な探究の時間
+      </strong>
 
     </div>
 
@@ -1748,9 +1964,10 @@ window.addEventListener(
     ) {
 
       event.preventDefault();
-      moveSection(1);
 
+      moveSection(1);
     }
+
 
     if (
       event.key === "ArrowUp"
@@ -1761,8 +1978,8 @@ window.addEventListener(
     ) {
 
       event.preventDefault();
-      moveSection(-1);
 
+      moveSection(-1);
     }
 
   }
