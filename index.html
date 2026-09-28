@@ -94,8 +94,11 @@ body::before {
 ========================================================= */
 
 section {
+  height: 100svh;
   min-height: 100svh;
+
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 
   display: flex;
   align-items: center;
@@ -103,7 +106,9 @@ section {
 
   position: relative;
 
-  padding: 7vh 7vw;
+  padding: 5vh 7vw;
+
+  overflow: hidden;
 }
 
 .container {
@@ -113,30 +118,29 @@ section {
 
 /* =========================================================
    COMMON TYPOGRAPHY
-   ★ 最小文字サイズは原則20px
 ========================================================= */
 
 .eyebrow {
   font-size: clamp(1.25rem, 1.5vw, 1.55rem);
-  letter-spacing: .14em;
+  letter-spacing: .12em;
 
   color: var(--blue);
   font-weight: 800;
 
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.4rem;
 }
 
 h2 {
   font-size: clamp(3rem, 6vw, 6.3rem);
-  line-height: 1.12;
+  line-height: 1.1;
   letter-spacing: -.04em;
 }
 
 .lead {
-  margin-top: 2.5rem;
+  margin-top: 2.2rem;
 
   font-size: clamp(1.4rem, 2vw, 1.8rem);
-  line-height: 1.9;
+  line-height: 1.8;
 
   color: var(--muted);
 }
@@ -151,7 +155,7 @@ strong {
 
 .reveal {
   opacity: 0;
-  transform: translateY(45px);
+  transform: translateY(42px);
 
   transition:
     opacity 1s cubic-bezier(.2,.8,.2,1),
@@ -164,9 +168,9 @@ strong {
 }
 
 .delay1 { transition-delay: .15s; }
-.delay2 { transition-delay: .3s; }
+.delay2 { transition-delay: .30s; }
 .delay3 { transition-delay: .45s; }
-.delay4 { transition-delay: .6s; }
+.delay4 { transition-delay: .60s; }
 
 /* =========================================================
    PROGRESS
@@ -193,20 +197,21 @@ strong {
 
 .page-number {
   position: fixed;
-  right: 30px;
-  bottom: 24px;
+  right: 28px;
+  bottom: 20px;
 
   z-index: 40;
 
   font-size: 1.25rem;
   font-weight: 700;
+
   letter-spacing: .08em;
 
   color: rgba(255,255,255,.55);
 }
 
 /* =========================================================
-   OPENING
+   01 OPENING
 ========================================================= */
 
 .hero {
@@ -217,7 +222,7 @@ strong {
   font-size: clamp(4rem, 8vw, 8.5rem);
   font-weight: 900;
 
-  line-height: 1.12;
+  line-height: 1.1;
   letter-spacing: -.05em;
 }
 
@@ -239,7 +244,7 @@ strong {
 .scroll-guide {
   position: absolute;
 
-  bottom: 5vh;
+  bottom: 4vh;
   left: 50%;
 
   transform: translateX(-50%);
@@ -258,9 +263,9 @@ strong {
   display: block;
 
   width: 2px;
-  height: 45px;
+  height: 35px;
 
-  margin: 14px auto 0;
+  margin: 10px auto 0;
 
   background:
     linear-gradient(
@@ -285,46 +290,53 @@ strong {
 }
 
 /* =========================================================
-   JOURNEY
+   02 JOURNEY
 ========================================================= */
 
 .journey {
-  width: min(1150px,100%);
+  width: min(1180px, 100%);
 }
 
 .journey-head {
   text-align: center;
-  margin-bottom: 5vh;
+  margin-bottom: 3.2vh;
+}
+
+.journey-head .eyebrow {
+  margin-bottom: .7rem;
 }
 
 .journey-head .intro {
   color: var(--muted);
 
-  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-size: clamp(1.25rem, 1.7vw, 1.65rem);
   font-weight: 600;
 
-  line-height: 1.8;
+  line-height: 1.5;
 }
 
 .journey-list {
   display: flex;
   flex-direction: column;
 
-  gap: clamp(1.2rem, 2.3vh, 2rem);
+  gap: clamp(.7rem, 1.4vh, 1.15rem);
 }
 
 .journey-item {
   display: grid;
 
   grid-template-columns:
-    clamp(140px, 15vw, 200px) 1fr;
+    clamp(135px, 14vw, 190px) 1fr;
 
   align-items: center;
 
-  gap: clamp(1rem,4vw,4rem);
+  gap: clamp(1rem, 3vw, 3rem);
 
   padding:
-    clamp(1.5rem,2.5vw,2.4rem);
+    clamp(1rem, 1.8vw, 1.55rem)
+    clamp(1.2rem, 2vw, 2rem);
+
+  min-height: 16vh;
 
   border-left:
     5px solid rgba(255,255,255,.1);
@@ -339,8 +351,8 @@ strong {
   opacity: 0;
 
   transform:
-    translateY(45px)
-    scale(.98);
+    translateY(35px)
+    scale(.985);
 
   transition:
     opacity 1.1s ease,
@@ -351,44 +363,29 @@ strong {
 section.visible
 .journey-item:nth-child(1) {
   opacity: 1;
-
-  transform:
-    translateY(0)
-    scale(1);
-
+  transform: translateY(0) scale(1);
   border-color: var(--blue);
-
   transition-delay: .35s;
 }
 
 section.visible
 .journey-item:nth-child(2) {
   opacity: 1;
-
-  transform:
-    translateY(0)
-    scale(1);
-
+  transform: translateY(0) scale(1);
   border-color: var(--purple);
-
   transition-delay: 1.15s;
 }
 
 section.visible
 .journey-item:nth-child(3) {
   opacity: 1;
-
-  transform:
-    translateY(0)
-    scale(1);
-
+  transform: translateY(0) scale(1);
   border-color: var(--green);
-
   transition-delay: 1.95s;
 }
 
 .journey-year {
-  font-size: clamp(1.6rem,2.2vw,2.2rem);
+  font-size: clamp(1.45rem, 2vw, 2rem);
   font-weight: 900;
 
   color: var(--blue);
@@ -405,33 +402,40 @@ section.visible
 }
 
 .journey-title {
-  font-size: clamp(2.6rem,4.5vw,4.8rem);
+  font-size: clamp(2.35rem, 4vw, 4.25rem);
 
   font-weight: 900;
 
   letter-spacing: -.04em;
+  line-height: 1.05;
 
-  line-height: 1.15;
+  white-space: nowrap;
+}
+
+/* 長いタイトルだけ少し小さくして必ず1行に */
+.journey-item:nth-child(2)
+.journey-title {
+  font-size: clamp(2rem, 3.5vw, 3.7rem);
 }
 
 /* =========================================================
-   STORY STAGES
+   03-05 STORY STAGES
 ========================================================= */
 
 .stage {
   display: grid;
 
   grid-template-columns:
-    .75fr 1.25fr;
+    .72fr 1.28fr;
 
-  gap: 7vw;
+  gap: 6vw;
 
   align-items: center;
 }
 
 .number {
   font-size:
-    clamp(8rem,18vw,16rem);
+    clamp(8rem, 18vw, 16rem);
 
   font-weight: 900;
 
@@ -448,31 +452,31 @@ section.visible
 
 .stage-title {
   font-size:
-    clamp(3.5rem,6vw,6.5rem);
+    clamp(3.5rem, 6vw, 6.5rem);
 
   font-weight: 900;
 
   letter-spacing: -.05em;
 
-  line-height: 1.1;
+  line-height: 1.08;
 }
 
 .stage-sub {
-  margin-top: 1.2rem;
+  margin-top: 1.1rem;
 
   color: var(--blue);
 
   font-size:
-    clamp(1.4rem,1.8vw,1.8rem);
+    clamp(1.3rem, 1.7vw, 1.7rem);
 
-  line-height: 1.5;
+  line-height: 1.45;
 
   font-weight: 800;
 }
 
 .big-message {
   font-size:
-    clamp(2.1rem,3.5vw,3.8rem);
+    clamp(2rem, 3.15vw, 3.45rem);
 
   line-height: 1.55;
 
@@ -493,7 +497,7 @@ section.visible
 }
 
 /* =========================================================
-   TURNING POINT
+   06 TURNING POINT
 ========================================================= */
 
 .turning {
@@ -506,7 +510,7 @@ section.visible
 }
 
 /* =========================================================
-   UNIVERSITY ADMISSIONS
+   07 UNIVERSITY
 ========================================================= */
 
 .admission-title {
@@ -515,18 +519,18 @@ section.visible
 
 .admission-title .small {
   font-size:
-    clamp(1.5rem,2vw,1.9rem);
+    clamp(1.5rem, 2vw, 1.9rem);
 
   font-weight: 600;
 
   color: var(--muted);
 
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.2rem;
 }
 
 .admission-title h2 {
   font-size:
-    clamp(5rem,12vw,11rem);
+    clamp(5rem, 11vw, 10.5rem);
 }
 
 .admission-title h2 span {
@@ -544,7 +548,7 @@ section.visible
 }
 
 /* =========================================================
-   SKILLS
+   08 SKILLS
 ========================================================= */
 
 .skills {
@@ -553,15 +557,15 @@ section.visible
   grid-template-columns:
     repeat(4,1fr);
 
-  gap: 1.2rem;
+  gap: 1.1rem;
 
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 .skill {
-  min-height: 260px;
+  min-height: 230px;
 
-  padding: 2rem;
+  padding: 1.8rem;
 
   border:
     1px solid
@@ -589,8 +593,7 @@ section.visible
 }
 
 .skill:hover {
-  transform:
-    translateY(-8px);
+  transform: translateY(-8px);
 
   border-color:
     rgba(85,200,255,.65);
@@ -600,67 +603,76 @@ section.visible
 }
 
 .skill .icon {
-  font-size: 2.8rem;
+  font-size: 2.7rem;
 }
 
 .skill h3 {
   font-size:
-    clamp(1.7rem,2vw,2.2rem);
+    clamp(1.65rem, 2vw, 2.1rem);
 
-  margin-bottom: .8rem;
+  margin-bottom: .65rem;
 }
 
 .skill p {
   color: var(--muted);
 
-  line-height: 1.65;
+  line-height: 1.55;
 
-  /* ★ ここも最小20px */
   font-size: 1.25rem;
 }
 
 /* =========================================================
-   PARENT MESSAGE
+   09 PARENT MESSAGE
+   ★ 1画面に必ず収める
 ========================================================= */
 
 .quote {
-  max-width: 1100px;
+  max-width: 1150px;
   margin: auto;
+}
+
+.quote .eyebrow {
+  margin-bottom: 1rem;
 }
 
 .quote .line1 {
   font-size:
-    clamp(3rem,5vw,5.4rem);
+    clamp(2.7rem, 4.6vw, 5rem);
 
-  line-height: 1.4;
+  line-height: 1.3;
 
   font-weight: 900;
 }
 
 .quote .line2 {
-  margin-top: 3rem;
+  margin-top: 2.2rem;
 
   font-size:
-    clamp(1.5rem,2.1vw,1.9rem);
+    clamp(1.3rem, 1.8vw, 1.7rem);
 
-  line-height: 1.9;
+  line-height: 1.65;
 
   color: var(--muted);
 }
 
 /* =========================================================
-   FINAL
+   10 FINAL
+   ★ 1画面に必ず収める
 ========================================================= */
 
 .final {
   text-align: center;
 }
 
+.final .eyebrow {
+  margin-bottom: 1rem;
+}
+
 .final .main {
   font-size:
-    clamp(4rem,8vw,8.5rem);
+    clamp(3.8rem, 7vw, 7.5rem);
 
-  line-height: 1.05;
+  line-height: 1.02;
 
   font-weight: 900;
 
@@ -686,30 +698,110 @@ section.visible
 .final .sub {
   max-width: 900px;
 
-  margin: 3rem auto 0;
+  margin: 2rem auto 0;
 
   color: var(--muted);
 
   font-size:
-    clamp(1.5rem,2vw,1.9rem);
+    clamp(1.25rem, 1.7vw, 1.6rem);
 
-  line-height: 1.9;
+  line-height: 1.6;
 }
 
 .school {
-  margin-top: 4rem;
+  margin-top: 2rem;
 
-  /* ★ 以前11px程度だった部分を20px以上へ */
   font-size: 1.25rem;
 
   font-weight: 600;
 
-  line-height: 1.8;
+  line-height: 1.5;
 
-  letter-spacing: .06em;
+  letter-spacing: .05em;
 
   color:
     rgba(255,255,255,.55);
+}
+
+/* =========================================================
+   SHORT HEIGHT PC
+   ★ ノートPC・プロジェクター対策
+========================================================= */
+
+@media
+(min-width: 901px)
+and (max-height: 800px) {
+
+  section {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+  }
+
+  .journey-head {
+    margin-bottom: 2vh;
+  }
+
+  .journey-head .eyebrow {
+    margin-bottom: .4rem;
+  }
+
+  .journey-list {
+    gap: .55rem;
+  }
+
+  .journey-item {
+    min-height: 14vh;
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+  }
+
+  .journey-title {
+    font-size:
+      clamp(2.1rem, 3.6vw, 3.8rem);
+  }
+
+  .journey-item:nth-child(2)
+  .journey-title {
+    font-size:
+      clamp(1.9rem, 3.15vw, 3.35rem);
+  }
+
+  .skills {
+    margin-top: 2rem;
+  }
+
+  .skill {
+    min-height: 200px;
+    padding: 1.5rem;
+  }
+
+  .quote .line1 {
+    font-size:
+      clamp(2.5rem, 4.2vw, 4.5rem);
+  }
+
+  .quote .line2 {
+    margin-top: 1.5rem;
+
+    font-size:
+      clamp(1.25rem, 1.6vw, 1.5rem);
+
+    line-height: 1.5;
+  }
+
+  .final .main {
+    font-size:
+      clamp(3.5rem, 6.4vw, 6.7rem);
+  }
+
+  .final .sub {
+    margin-top: 1.4rem;
+    line-height: 1.45;
+  }
+
+  .school {
+    margin-top: 1.3rem;
+  }
 }
 
 /* =========================================================
@@ -718,9 +810,18 @@ section.visible
 
 @media (max-width:900px) {
 
+  html {
+    scroll-snap-type: none;
+  }
+
   section {
+    height: auto;
+    min-height: 100svh;
+
     padding:
       7vh 6vw;
+
+    overflow: visible;
   }
 
   .stage {
@@ -733,6 +834,9 @@ section.visible
       1fr 1fr;
   }
 
+  .journey-title {
+    white-space: normal;
+  }
 }
 
 @media (max-width:650px) {
@@ -745,16 +849,17 @@ section.visible
     margin-bottom: .7rem;
   }
 
+  .journey-title,
+  .journey-item:nth-child(2)
   .journey-title {
     font-size:
-      clamp(2rem,7vw,3rem);
+      clamp(2rem, 7vw, 3rem);
   }
 
   .page-number {
     right: 15px;
     bottom: 15px;
   }
-
 }
 
 @media (max-width:520px) {
@@ -766,7 +871,6 @@ section.visible
   .skill {
     min-height: 200px;
   }
-
 }
 
 /* =========================================================
@@ -866,15 +970,13 @@ section.visible
       </div>
 
       <div class="intro">
-        1年生から、
-        段階的に探究を積み重ねてきました。
+        1年生から、段階的に探究を積み重ねてきました。
       </div>
 
     </div>
 
 
     <div class="journey-list">
-
 
       <div class="journey-item">
 
@@ -913,7 +1015,6 @@ section.visible
         </div>
 
       </div>
-
 
     </div>
 
@@ -967,7 +1068,7 @@ section.visible
              reveal
              delay3">
 
-      企業や社会が
+      企業や社会が<br>
       向き合っている<br>
 
       <span class="accent">
@@ -1029,7 +1130,7 @@ section.visible
              delay3">
 
       社会課題を
-      自分ごととして捉え、<br>
+      自分事として捉え、<br>
 
       調べ、聞き、考え、<br>
 
@@ -1092,13 +1193,13 @@ section.visible
              delay3">
 
       「気になる」を
-      問いに変え、<br>
+      「問い」に変え、<br>
 
       社会と学問を
       つなぎながら、<br>
 
       <span class="accent">
-        大学で学びたいこと
+        大学で深く学びたいこと
       </span>
 
       を見つける。
@@ -1239,7 +1340,7 @@ section.visible
           </h3>
 
           <p>
-            なぜその大学で、
+            なぜその大学で、<br>
             何を学びたいのか。
           </p>
 
@@ -1264,7 +1365,7 @@ section.visible
           </h3>
 
           <p>
-            自分の経験と考えを、
+            自分の経験と考えを、<br>
             自分の言葉で伝える。
           </p>
 
@@ -1289,7 +1390,7 @@ section.visible
           </h3>
 
           <p>
-            社会課題を捉え、
+            社会課題を捉え、<br>
             根拠をもって考える。
           </p>
 
@@ -1314,14 +1415,13 @@ section.visible
           </h3>
 
           <p>
-            考えを整理し、
+            考えを整理し、<br>
             相手に伝わる形にする。
           </p>
 
         </div>
 
       </div>
-
 
     </div>
 
@@ -1366,29 +1466,17 @@ section.visible
              reveal
              delay2">
 
-      本校では、
-      総合型選抜にも挑戦できる力を、<br>
-
-      1年生から時間をかけて
-      育ててきました。<br><br>
-
+      本校では、総合型選抜にも挑戦できる力を、<br>
+      1年生から時間をかけて育ててきました。<br><br>
 
       お子さまが
-
-      <strong>
-        「挑戦してみたい」
-      </strong>
-
+      <strong>「挑戦してみたい」</strong>
       と言ったとき、<br>
 
-
-      最初から
-      選択肢を狭めるのではなく、<br>
-
+      最初から選択肢を狭めるのではなく、<br>
 
       <strong>
-        ぜひ、その可能性を
-        一緒に考えてください。
+        ぜひ、その可能性を一緒に考えてください。
       </strong>
 
     </div>
@@ -1431,16 +1519,11 @@ section.visible
              delay2">
 
       社会を知る。<br>
-
       課題に向き合う。<br>
-
       自分なりの答えをつくる。<br>
-
       学問につなげる。<br><br>
 
-
-      その積み重ねを、<br>
-
+      その積み重ねを、
       <strong>
         一人ひとりの進路へ。
       </strong>
@@ -1454,7 +1537,6 @@ section.visible
              delay3">
 
       高崎健康福祉大学高崎高等学校<br>
-
       総合的な探究の時間
 
     </div>
