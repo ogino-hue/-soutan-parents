@@ -21,7 +21,7 @@
 :root {
   --bg: #05070b;
   --white: #f7f8fb;
-  --muted: #9aa5b5;
+  --muted: #b8c1cf;
   --blue: #55c8ff;
   --purple: #9b7bff;
   --green: #54e6b1;
@@ -60,17 +60,17 @@ body::before {
   background:
     radial-gradient(
       circle at 15% 20%,
-      rgba(85,200,255,.13),
+      rgba(85,200,255,.14),
       transparent 32%
     ),
     radial-gradient(
       circle at 85% 70%,
-      rgba(155,123,255,.12),
+      rgba(155,123,255,.13),
       transparent 35%
     ),
     radial-gradient(
       circle at 50% 100%,
-      rgba(84,230,177,.07),
+      rgba(84,230,177,.08),
       transparent 35%
     );
 
@@ -81,9 +81,8 @@ body::before {
 .noise {
   position: fixed;
   inset: 0;
-
   pointer-events: none;
-  opacity: .035;
+  opacity: .03;
   z-index: 20;
 
   background-image:
@@ -104,44 +103,40 @@ section {
 
   position: relative;
 
-  padding: 8vh 8vw;
+  padding: 7vh 7vw;
 }
 
 .container {
-  width: min(1200px, 100%);
+  width: min(1300px, 100%);
   margin: auto;
 }
 
 /* =========================================================
-   TYPOGRAPHY
+   COMMON TYPOGRAPHY
+   ★ 最小文字サイズは原則20px
 ========================================================= */
 
 .eyebrow {
-  font-size: clamp(.7rem, 1vw, .95rem);
-
-  letter-spacing: .28em;
-  text-transform: uppercase;
+  font-size: clamp(1.25rem, 1.5vw, 1.55rem);
+  letter-spacing: .14em;
 
   color: var(--blue);
+  font-weight: 800;
 
-  font-weight: 700;
-
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
 }
 
 h2 {
-  font-size: clamp(2.3rem, 6vw, 6rem);
-
-  line-height: 1.1;
+  font-size: clamp(3rem, 6vw, 6.3rem);
+  line-height: 1.12;
   letter-spacing: -.04em;
 }
 
 .lead {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 
-  font-size: clamp(1rem, 2vw, 1.55rem);
-
-  line-height: 2;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  line-height: 1.9;
 
   color: var(--muted);
 }
@@ -156,7 +151,7 @@ strong {
 
 .reveal {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(45px);
 
   transition:
     opacity 1s cubic-bezier(.2,.8,.2,1),
@@ -179,11 +174,10 @@ strong {
 
 .progress {
   position: fixed;
-
   top: 0;
   left: 0;
 
-  height: 3px;
+  height: 5px;
   width: 0%;
 
   z-index: 50;
@@ -199,17 +193,16 @@ strong {
 
 .page-number {
   position: fixed;
-
-  right: 28px;
-  bottom: 22px;
+  right: 30px;
+  bottom: 24px;
 
   z-index: 40;
 
-  font-size: .72rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: .08em;
 
-  letter-spacing: .16em;
-
-  color: rgba(255,255,255,.4);
+  color: rgba(255,255,255,.55);
 }
 
 /* =========================================================
@@ -221,11 +214,11 @@ strong {
 }
 
 .hero .question {
-  font-size: clamp(2.7rem, 7vw, 7.5rem);
+  font-size: clamp(4rem, 8vw, 8.5rem);
+  font-weight: 900;
 
-  font-weight: 800;
-
-  line-height: 1.15;
+  line-height: 1.12;
+  letter-spacing: -.05em;
 }
 
 .hero .question span {
@@ -246,16 +239,17 @@ strong {
 .scroll-guide {
   position: absolute;
 
-  bottom: 6vh;
+  bottom: 5vh;
   left: 50%;
 
   transform: translateX(-50%);
 
-  font-size: .65rem;
+  font-size: 1.25rem;
+  font-weight: 700;
 
-  letter-spacing: .25em;
+  letter-spacing: .12em;
 
-  color: rgba(255,255,255,.35);
+  color: rgba(255,255,255,.55);
 }
 
 .scroll-guide::after {
@@ -263,7 +257,7 @@ strong {
 
   display: block;
 
-  width: 1px;
+  width: 2px;
   height: 45px;
 
   margin: 14px auto 0;
@@ -288,7 +282,6 @@ strong {
     opacity: 1;
     transform: scaleY(1);
   }
-
 }
 
 /* =========================================================
@@ -296,19 +289,19 @@ strong {
 ========================================================= */
 
 .journey {
-  width: min(1100px,100%);
+  width: min(1150px,100%);
 }
 
 .journey-head {
   text-align: center;
-  margin-bottom: 6vh;
+  margin-bottom: 5vh;
 }
 
 .journey-head .intro {
   color: var(--muted);
 
-  font-size:
-    clamp(1rem,1.8vw,1.4rem);
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-weight: 600;
 
   line-height: 1.8;
 }
@@ -317,32 +310,29 @@ strong {
   display: flex;
   flex-direction: column;
 
-  gap:
-    clamp(1.2rem,2.5vh,2.2rem);
+  gap: clamp(1.2rem, 2.3vh, 2rem);
 }
 
 .journey-item {
-
   display: grid;
 
   grid-template-columns:
-    clamp(110px,15vw,180px) 1fr;
+    clamp(140px, 15vw, 200px) 1fr;
 
   align-items: center;
 
-  gap:
-    clamp(1rem,4vw,4rem);
+  gap: clamp(1rem,4vw,4rem);
 
   padding:
-    clamp(1.4rem,2.5vw,2.3rem);
+    clamp(1.5rem,2.5vw,2.4rem);
 
   border-left:
-    3px solid rgba(255,255,255,.1);
+    5px solid rgba(255,255,255,.1);
 
   background:
     linear-gradient(
       90deg,
-      rgba(255,255,255,.04),
+      rgba(255,255,255,.055),
       transparent
     );
 
@@ -360,52 +350,46 @@ strong {
 
 section.visible
 .journey-item:nth-child(1) {
-
   opacity: 1;
+
   transform:
     translateY(0)
     scale(1);
 
-  border-color:
-    var(--blue);
+  border-color: var(--blue);
 
   transition-delay: .35s;
 }
 
 section.visible
 .journey-item:nth-child(2) {
-
   opacity: 1;
+
   transform:
     translateY(0)
     scale(1);
 
-  border-color:
-    var(--purple);
+  border-color: var(--purple);
 
   transition-delay: 1.15s;
 }
 
 section.visible
 .journey-item:nth-child(3) {
-
   opacity: 1;
+
   transform:
     translateY(0)
     scale(1);
 
-  border-color:
-    var(--green);
+  border-color: var(--green);
 
   transition-delay: 1.95s;
 }
 
 .journey-year {
-
-  font-size:
-    clamp(1.1rem,2vw,1.55rem);
-
-  font-weight: 800;
+  font-size: clamp(1.6rem,2.2vw,2.2rem);
+  font-weight: 900;
 
   color: var(--blue);
 }
@@ -421,9 +405,7 @@ section.visible
 }
 
 .journey-title {
-
-  font-size:
-    clamp(2rem,4.5vw,4.5rem);
+  font-size: clamp(2.6rem,4.5vw,4.8rem);
 
   font-weight: 900;
 
@@ -440,23 +422,23 @@ section.visible
   display: grid;
 
   grid-template-columns:
-    .8fr 1.2fr;
+    .75fr 1.25fr;
 
-  gap: 8vw;
+  gap: 7vw;
 
   align-items: center;
 }
 
 .number {
   font-size:
-    clamp(7rem,17vw,15rem);
+    clamp(8rem,18vw,16rem);
 
   font-weight: 900;
 
   line-height: .75;
 
   color:
-    rgba(255,255,255,.035);
+    rgba(255,255,255,.04);
 
   position: absolute;
 
@@ -466,37 +448,38 @@ section.visible
 
 .stage-title {
   font-size:
-    clamp(2.7rem,6vw,6rem);
+    clamp(3.5rem,6vw,6.5rem);
 
   font-weight: 900;
 
   letter-spacing: -.05em;
+
+  line-height: 1.1;
 }
 
 .stage-sub {
-
-  margin-top: .8rem;
+  margin-top: 1.2rem;
 
   color: var(--blue);
 
   font-size:
-    clamp(.9rem,1.5vw,1.15rem);
+    clamp(1.4rem,1.8vw,1.8rem);
 
-  font-weight: 700;
+  line-height: 1.5;
+
+  font-weight: 800;
 }
 
 .big-message {
-
   font-size:
-    clamp(1.8rem,3.5vw,3.6rem);
+    clamp(2.1rem,3.5vw,3.8rem);
 
-  line-height: 1.5;
+  line-height: 1.55;
 
   font-weight: 700;
 }
 
 .accent {
-
   background:
     linear-gradient(
       90deg,
@@ -518,14 +501,12 @@ section.visible
 }
 
 .turning h2 {
-
-  max-width: 1000px;
-
+  max-width: 1050px;
   margin: auto;
 }
 
 /* =========================================================
-   ADMISSION
+   UNIVERSITY ADMISSIONS
 ========================================================= */
 
 .admission-title {
@@ -533,23 +514,22 @@ section.visible
 }
 
 .admission-title .small {
-
   font-size:
-    clamp(1rem,2vw,1.5rem);
+    clamp(1.5rem,2vw,1.9rem);
+
+  font-weight: 600;
 
   color: var(--muted);
 
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .admission-title h2 {
-
   font-size:
-    clamp(4rem,11vw,10rem);
+    clamp(5rem,12vw,11rem);
 }
 
 .admission-title h2 span {
-
   background:
     linear-gradient(
       90deg,
@@ -568,31 +548,29 @@ section.visible
 ========================================================= */
 
 .skills {
-
   display: grid;
 
   grid-template-columns:
     repeat(4,1fr);
 
-  gap: 1rem;
+  gap: 1.2rem;
 
   margin-top: 4rem;
 }
 
 .skill {
-
-  min-height: 210px;
+  min-height: 260px;
 
   padding: 2rem;
 
   border:
     1px solid
-    rgba(255,255,255,.12);
+    rgba(255,255,255,.14);
 
-  border-radius: 22px;
+  border-radius: 24px;
 
   background:
-    rgba(255,255,255,.035);
+    rgba(255,255,255,.04);
 
   backdrop-filter:
     blur(12px);
@@ -611,34 +589,34 @@ section.visible
 }
 
 .skill:hover {
-
   transform:
     translateY(-8px);
 
   border-color:
-    rgba(85,200,255,.6);
+    rgba(85,200,255,.65);
 
   background:
-    rgba(85,200,255,.07);
+    rgba(85,200,255,.08);
 }
 
 .skill .icon {
-  font-size: 2rem;
+  font-size: 2.8rem;
 }
 
 .skill h3 {
-
   font-size:
-    clamp(1.25rem,2vw,1.8rem);
+    clamp(1.7rem,2vw,2.2rem);
+
+  margin-bottom: .8rem;
 }
 
 .skill p {
-
   color: var(--muted);
 
-  line-height: 1.7;
+  line-height: 1.65;
 
-  font-size: .9rem;
+  /* ★ ここも最小20px */
+  font-size: 1.25rem;
 }
 
 /* =========================================================
@@ -646,30 +624,26 @@ section.visible
 ========================================================= */
 
 .quote {
-
-  max-width: 1050px;
-
+  max-width: 1100px;
   margin: auto;
 }
 
 .quote .line1 {
-
   font-size:
-    clamp(2rem,5vw,5rem);
+    clamp(3rem,5vw,5.4rem);
 
   line-height: 1.4;
 
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .quote .line2 {
-
   margin-top: 3rem;
 
   font-size:
-    clamp(1.15rem,2vw,1.7rem);
+    clamp(1.5rem,2.1vw,1.9rem);
 
-  line-height: 2;
+  line-height: 1.9;
 
   color: var(--muted);
 }
@@ -683,9 +657,8 @@ section.visible
 }
 
 .final .main {
-
   font-size:
-    clamp(3rem,8vw,8rem);
+    clamp(4rem,8vw,8.5rem);
 
   line-height: 1.05;
 
@@ -695,7 +668,6 @@ section.visible
 }
 
 .final .main span {
-
   display: block;
 
   background:
@@ -712,52 +684,51 @@ section.visible
 }
 
 .final .sub {
-
-  max-width: 850px;
+  max-width: 900px;
 
   margin: 3rem auto 0;
 
   color: var(--muted);
 
   font-size:
-    clamp(1rem,2vw,1.45rem);
+    clamp(1.5rem,2vw,1.9rem);
 
-  line-height: 2;
+  line-height: 1.9;
 }
 
 .school {
+  margin-top: 4rem;
 
-  margin-top: 5rem;
+  /* ★ 以前11px程度だった部分を20px以上へ */
+  font-size: 1.25rem;
 
-  font-size: .72rem;
+  font-weight: 600;
 
-  letter-spacing: .18em;
+  line-height: 1.8;
+
+  letter-spacing: .06em;
 
   color:
-    rgba(255,255,255,.35);
+    rgba(255,255,255,.55);
 }
 
 /* =========================================================
    MOBILE
 ========================================================= */
 
-@media (max-width:800px) {
+@media (max-width:900px) {
 
   section {
     padding:
-      8vh 7vw;
+      7vh 6vw;
   }
 
   .stage {
-
-    grid-template-columns:
-      1fr;
-
+    grid-template-columns: 1fr;
     gap: 3rem;
   }
 
   .skills {
-
     grid-template-columns:
       1fr 1fr;
   }
@@ -767,19 +738,21 @@ section.visible
 @media (max-width:650px) {
 
   .journey-item {
-
     display: block;
   }
 
   .journey-year {
-
     margin-bottom: .7rem;
   }
 
   .journey-title {
-
     font-size:
-      clamp(1.7rem,7vw,2.7rem);
+      clamp(2rem,7vw,3rem);
+  }
+
+  .page-number {
+    right: 15px;
+    bottom: 15px;
   }
 
 }
@@ -787,9 +760,11 @@ section.visible
 @media (max-width:520px) {
 
   .skills {
+    grid-template-columns: 1fr;
+  }
 
-    grid-template-columns:
-      1fr;
+  .skill {
+    min-height: 200px;
   }
 
 }
@@ -802,7 +777,6 @@ section.visible
 (prefers-reduced-motion:reduce) {
 
   * {
-
     scroll-behavior:
       auto !important;
 
@@ -815,12 +789,9 @@ section.visible
 
   .reveal,
   .journey-item {
-
     opacity: 1;
-
     transform: none;
   }
-
 }
 
 </style>
@@ -896,8 +867,7 @@ section.visible
 
       <div class="intro">
         1年生から、
-        段階的に探究を
-        積み重ねてきました。
+        段階的に探究を積み重ねてきました。
       </div>
 
     </div>
@@ -1149,7 +1119,7 @@ section.visible
   <div class="container turning">
 
     <div class="eyebrow reveal">
-      WHY?
+      なぜ？
     </div>
 
     <h2
@@ -1397,8 +1367,7 @@ section.visible
              delay2">
 
       本校では、
-      総合型選抜にも
-      挑戦できる力を、<br>
+      総合型選抜にも挑戦できる力を、<br>
 
       1年生から時間をかけて
       育ててきました。<br><br>
@@ -1508,19 +1477,13 @@ const observer =
 
       entries.forEach(entry => {
 
-        if (
-          entry.isIntersecting
-        ) {
+        if (entry.isIntersecting) {
 
           entry.target
-            .querySelectorAll(
-              ".reveal"
-            )
+            .querySelectorAll(".reveal")
             .forEach(el => {
 
-              el.classList.add(
-                "visible"
-              );
+              el.classList.add("visible");
 
             });
 
@@ -1555,9 +1518,7 @@ document
 ========================================================= */
 
 const progress =
-  document.getElementById(
-    "progress"
-  );
+  document.getElementById("progress");
 
 
 window.addEventListener(
@@ -1565,18 +1526,14 @@ window.addEventListener(
   () => {
 
     const max =
-      document
-        .documentElement
-        .scrollHeight
+      document.documentElement.scrollHeight
       -
       window.innerHeight;
 
     const value =
       max > 0
       ?
-      window.scrollY
-      / max
-      * 100
+      window.scrollY / max * 100
       :
       0;
 
@@ -1592,18 +1549,10 @@ window.addEventListener(
 ========================================================= */
 
 const sections =
-  [
-    ...document
-      .querySelectorAll(
-        "section"
-      )
-  ];
-
+  [...document.querySelectorAll("section")];
 
 const pageNumber =
-  document.getElementById(
-    "pageNumber"
-  );
+  document.getElementById("pageNumber");
 
 
 const pageObserver =
@@ -1613,33 +1562,17 @@ const pageObserver =
 
       entries.forEach(entry => {
 
-        if (
-          entry.isIntersecting
-        ) {
+        if (entry.isIntersecting) {
 
           const index =
-            sections
-              .indexOf(
-                entry.target
-              )
-            + 1;
+            sections.indexOf(entry.target) + 1;
 
           pageNumber.textContent =
-            String(index)
-              .padStart(
-                2,
-                "0"
-              )
+            String(index).padStart(2,"0")
             +
             " / "
             +
-            String(
-              sections.length
-            )
-              .padStart(
-                2,
-                "0"
-              );
+            String(sections.length).padStart(2,"0");
 
         }
 
@@ -1657,9 +1590,7 @@ const pageObserver =
 sections.forEach(
   section => {
 
-    pageObserver.observe(
-      section
-    );
+    pageObserver.observe(section);
 
   }
 );
@@ -1672,10 +1603,7 @@ sections.forEach(
 function currentSectionIndex() {
 
   let nearest = 0;
-
-  let distance =
-    Infinity;
-
+  let distance = Infinity;
 
   sections.forEach(
     (section,index) => {
@@ -1687,12 +1615,9 @@ function currentSectionIndex() {
             .top
         );
 
-      if (
-        d < distance
-      ) {
+      if (d < distance) {
 
         distance = d;
-
         nearest = index;
 
       }
@@ -1700,42 +1625,27 @@ function currentSectionIndex() {
     }
   );
 
-
   return nearest;
-
 }
 
 
-function moveSection(
-  direction
-) {
+function moveSection(direction) {
 
   const current =
     currentSectionIndex();
 
-
   const next =
     Math.max(
-
       0,
-
       Math.min(
-
         sections.length - 1,
-
         current + direction
-
       )
-
     );
-
 
   sections[next]
     .scrollIntoView({
-
-      behavior:
-        "smooth"
-
+      behavior: "smooth"
     });
 
 }
@@ -1746,53 +1656,29 @@ window.addEventListener(
   event => {
 
     if (
-
-      event.key
-        === "ArrowDown"
-
+      event.key === "ArrowDown"
       ||
-
-      event.key
-        === "ArrowRight"
-
+      event.key === "ArrowRight"
       ||
-
-      event.key
-        === "PageDown"
-
+      event.key === "PageDown"
       ||
-
-      event.key
-        === " "
-
+      event.key === " "
     ) {
 
       event.preventDefault();
-
       moveSection(1);
 
     }
 
-
     if (
-
-      event.key
-        === "ArrowUp"
-
+      event.key === "ArrowUp"
       ||
-
-      event.key
-        === "ArrowLeft"
-
+      event.key === "ArrowLeft"
       ||
-
-      event.key
-        === "PageUp"
-
+      event.key === "PageUp"
     ) {
 
       event.preventDefault();
-
       moveSection(-1);
 
     }
@@ -1813,25 +1699,15 @@ window.addEventListener(
       () => {
 
         sections[0]
-          .querySelectorAll(
-            ".reveal"
-          )
-          .forEach(
-            el => {
+          .querySelectorAll(".reveal")
+          .forEach(el => {
 
-              el
-                .classList
-                .add(
-                  "visible"
-                );
+            el.classList.add("visible");
 
-            }
-          );
+          });
 
       },
-
       150
-
     );
 
   }
